@@ -1,4 +1,4 @@
-# Hardhat Boilerplate
+# Solidity Starter
 
 ## Tooling
 
