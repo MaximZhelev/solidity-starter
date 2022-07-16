@@ -1,10 +1,12 @@
-import { Signer } from "@ethersproject/abstract-signer";
-import { task } from "hardhat/config";
+import fsExtra from 'fs-extra';
+import { TASK_CLEAN } from 'hardhat/builtin-tasks/task-names';
+import { task } from 'hardhat/config';
 
-task("accounts", "Prints the list of accounts", async (_taskArgs, hre) => {
-  const accounts: Signer[] = await hre.ethers.getSigners();
-
-  for (const account of accounts) {
-    console.log(await account.getAddress());
+task(TASK_CLEAN, 'Overrides the standard clean task', async function (_taskArgs, { config }, runSuper) {
+  await fsExtra.remove('./coverage');
+  await fsExtra.remove('./coverage.json');
+  if (config.typechain?.outDir) {
+    await fsExtra.remove(config.typechain.outDir);
   }
+  await runSuper();
 });
