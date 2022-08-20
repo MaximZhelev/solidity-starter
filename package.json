@@ -14,7 +14,8 @@
     "prettier:check": "prettier --check --config ./.prettierrc \"**/*.{js,json,md,sol,ts,yaml,yml}\"",
     "test": "hardhat test",
     "typechain": "hardhat typechain",
-    "deploy:ropsten": "hardhat run --network ropsten scripts/deploy.ts"
+    "deploy:ropsten": "hardhat run --network ropsten scripts/deploy.ts",
+    "deploy:localhost": "hardhat run --network localhost scripts/deploy.ts"
   },
   "author": "Maxim Zhelev",
   "license": "ISC",

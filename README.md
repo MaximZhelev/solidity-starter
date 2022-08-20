@@ -83,10 +83,22 @@ Generate a test coverage report:
 $ npm run coverage
 ```
 
-### Deploy
+### Deploy 
+
+Deploy to Ropsten network:
 
 ```sh
 $ npm run deploy:ropsten
+```
+
+Deploy to development network:
+
+```sh
+$ npx hardhat node
+```
+
+```sh
+$ npm run deploy:localhost
 ```
 
 ### Clean
